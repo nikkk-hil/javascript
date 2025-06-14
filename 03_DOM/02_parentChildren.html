@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+    <div class="months">
+        <div>January</div>
+        <div>February</div>
+        <div>March</div>
+        <div>April</div>
+        <div>May</div>
+    </div>
+</body>
+
+<script>
+    const mm = document.querySelector('.months');
+
+    for (let i = 0; i < mm.children.length; i++) {
+        // console.log(mm.children[i].textContent);
+    }
+
+    let mar = mm.children[2];
+    // console.log(mar.parentElement)
+
+    // console.log(mm.firstElementChild)
+    // console.log(mm.lastElementChild)
+
+    console.log(mar.nextElementSibling)
+
+
+    console.log(mm.childNodes)
+</script>
+</html>

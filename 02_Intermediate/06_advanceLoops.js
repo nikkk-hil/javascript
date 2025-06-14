@@ -78,3 +78,9 @@ const coding = ['js', 'py', 'rb', 'cpp', 'java'];
 coding.forEach( (lang, index, arr) => {
     console.log(lang, index, arr);
 })
+
+const vals = coding.forEach( (lang, index, arr) => {
+    return lang;
+});
+
+// FOREACH LOOP DOESN'T RETURN ANYTHING

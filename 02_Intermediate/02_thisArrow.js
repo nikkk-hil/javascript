@@ -1,3 +1,7 @@
+/* Browser return this keyword as windows */
+
+
+
 const obj = {
   name: "John",
   sayName: function() {
@@ -29,5 +33,6 @@ const arrowFn = () => {
     console.log(this.name)
     console.log(this)
 }
+
 arrowFn();
 

@@ -26,6 +26,6 @@ const books = [
 
   // REDUCE
 
-  const totalSum = nums.reduce( (acc, currVal) => (acc + currVal))
+  const totalSum = nums.reduce( (acc, currVal) => (acc + currVal), 0)
 
   console.log(totalSum);

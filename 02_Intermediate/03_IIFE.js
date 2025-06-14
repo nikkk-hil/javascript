@@ -21,6 +21,6 @@
 
 ( (username) => {
     console.log(`${username}, Good Morning`)
-})('Drake')
+})('Drake');
 
-console.log(`Everything is Fine!`)
+console.log(`Everything is Fine!`);
