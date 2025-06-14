@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+function addLanguage(lang){
+    const ul = document.querySelector('.language')
+    const li = document.createElement('li')
+    let textNode = document.createTextNode(lang);
+    li.appendChild(textNode);
+
+    ul.appendChild(li)
+    console.log(ul)
+}
+
+addLanguage("Python")
+addLanguage("Ruby")
+addLanguage("Java")
+addLanguage("Cpp")
+
+//EDIT
+const newLi = document.createElement('li')
+newLi.appendChild(document.createTextNode("Kotlin"))
+document.querySelector('li:nth-child(2)').replaceWith(newLi)
+
+//REMOVE
+document.querySelector('li:last-child').remove();
+
+</script>
+</html>
