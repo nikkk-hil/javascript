@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+
+/*
+    ------------ TO LEARN IN EVENTS --------------
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+*/
+
+
+    // document.getElementById('japan').onclick = () => {alert("It's Japan.")} ------  NOT FEASIBLE IN LARGE PROJECT
+
+    /*
+    these are event propogation types
+
+    --------- BUBBLE EVENT ----------
+    flow from inside to outside i.e. first li elements event listened then ul 
+    -------- CAPTURE EVENT ----------
+    flow from outside to inside similarly here ul elements listened first then child elements
+    */
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     alert("All the list of cities, I visit")
+    // }, false /*bubble*/)
+
+    // document.getElementById('japan').addEventListener('click', function(e){
+    //     alert("It's Japan.")
+    // }, false /*bubble event*/)
+
+    // document.getElementById('japan').addEventListener('click', function(e){
+    //     alert("It's Japan.")
+    // }, true /*capture event*/)
+
+    //  document.getElementById('images').addEventListener('click', function(e){
+    //     alert("All the list of cities, I visit")
+    //     e.stopPropagation();    //stops further propagation
+    // }, true /*capture event*/)
+
+
+    document.getElementById('google').addEventListener('click', function(e) {
+        e.preventDefault();
+        // e.stopPropagation();
+        console.log("google.com")
+    }, false)
+
+
+    document.getElementById('images').addEventListener('click', function(e){
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let image = e.target.parentNode;
+            image.remove();
+        }
+    }, false)
+
+</script>
+</html>
